@@ -1,65 +1,64 @@
-########################################## Birinci Aşama Başlangıcı ##################################################
+########################################## First Stage Start ##################################################
 
-#Birinci Aşama: Kullanıcıdan iki adet giriş değeri alarak mantık kapılarında bu iki değeri işleme tabi tutuyoruz
+#First Stage: We take two boolean input value from user for using on logic gates
 
-#Kullanıcı programı ilk çalıştırdığında ne yapacağını bilmediği için istediğimiz girdi şeklini kullanıcıya bir kereye mahsus söylüyoruz
-print("Girdilerinizi 1 veya 0 şeklinde giriniz!")
+#We should say what he/she should do to user
+print("Input 1 or 0 for logic gates")
 
-#Doğru girdi yapılana kadar kullanıcıdan girdi isteyeceğimiz için sonsuz döngü oluşturarak bu işlemi gerçekleştiriyoruz
+#Use infinite while loop until user enter the right inputs
 while True:
-    #Kullanıcının girdiği birinci ve ikinci girdiyi input ile alarak int veri türüne çeviriyoruz
-    birinci_girdi = int(input("Birinci Girdi Değeriniz: "))
-    ikinci_girdi = int(input("İkinci Girdi Değeriniz: "))
+    #Taking user inputs as integer
+    first_input = int(input("First input: "))
+    second_input = int(input("Second input: "))
     
-    #Alınan girdiler istenilen şekilde ise döngüden çıkılarak bir sonraki yapılacak işleme geçiliyor
-    if ((birinci_girdi == 1 or birinci_girdi == 0) and (ikinci_girdi == 1 or ikinci_girdi == 0)):
+    #Break while loop if user enter the right inputs
+    if ((first_input == 1 or first_input == 0) and (second_input == 1 or second_input == 0)):
         break
     
-    #Alınan girdiler istenilen şekilde değil ise bir uyarı mesajı göndererek döngünün başına dönülüyor
+    #Print some warning message for wrong inputs
     else:
-        print("İstenilen Şekilde Girdi Yapmalısınız!")
+        print("You have to enter 1 or 0!")
 
-#Kullanıcıya kapı bilgilerinin verilmesi
-print("1-AND Kapısı 2-OR Kapısı 3-XOR Kapısı 4-NAND Kapısı 5-NOT Kapısı")
+#Logic gates information
+print("1-AND Gate 2-OR Gate 3-XOR Gate 4-NAND Gate 5-NOT Gate")
 
-#Kullanıcının işlem yapacağı kapıyı seçmek için bir input ile değer alınacaktır
-islem = int(input("Girdilerinizi Hangi Kapıda İşleme Almak İstersiniz: "))
+#Taking input from user for what gate he/she want to work on
+gate_information = int(input("What gate you want to work on: "))
 
-#Tekrarlı işlem yapılacağı için sonuç yazdırma işini bir fonksiyona atıyoruz
-def sonuc_yazdirma(girdi_sonuc):
-    print(f"Seçilen kapıdaki işlem sonucunuz: {girdi_sonuc}")
+#We use 4 nearly same print section. So we use simple function
+def result(input_result):
+    print(f"Result on selected gate: {input_result}")
 
 
-#İki girdinin işleme girmesi sonucu bir değer ortaya çıkacaktır bunu bir değişkene atayacağım ve adı girdi_sonuc olacaktır
+#We should have third variable for result. That we call 'input_result'
 
-#Alınan işleme göre match-case yapısı oluşturulması
-#Burada 4 adet case bulunmakta bu yüzden hepsine tek tek print ile sonucu yazdırmaktansa daha önce hazırladığımız fonksiyon ile bu işlemi daha dinamik hala getiriyoruz
+#We make match-case using gate_information
 
-match islem:
+
+match gate_information:
     case 1:
-        girdi_sonuc = birinci_girdi and ikinci_girdi
-        sonuc_yazdirma(girdi_sonuc)
+        input_result = first_input and second_input
+        result(input_result)
     case 2:
-        girdi_sonuc = birinci_girdi or ikinci_girdi
-        sonuc_yazdirma(girdi_sonuc)
+        input_result = first_input or second_input
+        result(input_result)
     case 3:
-        girdi_sonuc = int(birinci_girdi != ikinci_girdi) #Burada yapılan işlemler True veya False olarak döneceği için onları int değerine çeviriyoruz
-        sonuc_yazdirma(girdi_sonuc)
+        input_result = int(first_input != second_input) #This section return True or False. We should turn to integer
+        result(input_result)
     case 4:
-        girdi_sonuc = int(not (birinci_girdi and ikinci_girdi)) #Burada yapılan işlemler True veya False olarak döneceği için onları int değerine çeviriyoruz
-        sonuc_yazdirma(girdi_sonuc)
-    case 5: #Bu case'de fonksiyon çağırmadık çünkü buradaki yazım bir kereye mahsustur.
-        girdi_sonuc = int(not(birinci_girdi)) #Burada yapılan işlemler True veya False olarak döneceği için onları int değerine çeviriyoruz
-        print(f"Girdiniz {birinci_girdi} NOT kapısından: {girdi_sonuc} olarak çıkar.") 
+        input_result = int(not (first_input and second_input)) #This section return True or False. We should turn to integer
+        result(input_result)
+    case 5: 
+        input_result = int(not(first_input)) #This section return True or False. We should turn to integer
+        print(f"Your first input {first_input} will be {input_result} on NOT gate.") 
         
-        girdi_sonuc2 = int(not(ikinci_girdi)) #Burada yapılan işlemler True veya False olarak döneceği için onları int değerine çeviriyoruz
-        print(f"Girdiniz {ikinci_girdi} NOT kapısından: {girdi_sonuc2} olarak çıkar.")
+        input_result2 = int(not(second_input)) #This section return True or False. We should turn to integer
+        print(f"Your second input  {second_input} will be {input_result2} on NOT gate")
     case _:
-        print("İstenmeyen Seçim Yaptınız!")
+        print("Undesired Choice!")
 
-########################################## Birinci Aşama Sonu ##################################################
+########################################## First Stage Finish ##################################################
 
-########################################## İkinci Aşama Başlangıcı ##################################################
+########################################## Second Stage Start #############################################
 
-#İkinci Aşama: Üç değişkenli bir ifadenin  (A AND (B OR C)) tüm doğruluk tablosunu ekranda göstermek 
 
