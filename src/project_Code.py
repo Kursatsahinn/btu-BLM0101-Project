@@ -1,4 +1,4 @@
-########################################## First Stage Start ##################################################
+########################################## First Stage Start #############################################
 
 #First Stage: We take two boolean input value from user for using on logic gates
 
@@ -32,7 +32,7 @@ def result(input_result):
 
 #We should have third variable for result. That we call 'input_result'
 
-#We make match-case using gate_information
+#We create match-case statement using gate_information
 
 
 match gate_information:
@@ -43,22 +43,34 @@ match gate_information:
         input_result = first_input or second_input
         result(input_result)
     case 3:
-        input_result = int(first_input != second_input) #This section return True or False. We should turn to integer
+        input_result = int(first_input != second_input) #The boolean result is cast to an integer value.
         result(input_result)
     case 4:
-        input_result = int(not (first_input and second_input)) #This section return True or False. We should turn to integer
+        input_result = int(not (first_input and second_input)) #The boolean result is cast to an integer value.
         result(input_result)
     case 5: 
-        input_result = int(not(first_input)) #This section return True or False. We should turn to integer
+        input_result = int(not(first_input)) #The boolean result is cast to an integer value.
         print(f"Your first input {first_input} will be {input_result} on NOT gate.") 
         
-        input_result2 = int(not(second_input)) #This section return True or False. We should turn to integer
+        input_result2 = int(not(second_input)) #The boolean result is cast to an integer value.
         print(f"Your second input  {second_input} will be {input_result2} on NOT gate")
     case _:
         print("Undesired Choice!")
 
-########################################## First Stage Finish ##################################################
+########################################## First Stage Finish #############################################
 
 ########################################## Second Stage Start #############################################
 
+print(f"{'Value A':^10} | {'Value B':^10} | {'Value C':^10} | {'A and (B or C)':^10}") 
+print("-" * 50) 
 
+#Creating nested for loop for A, B and C values
+for A in range(0, 2):
+    for B in range(0, 2):
+        for C in range(0, 2):
+            #Logic gate example
+            result = int(A and (B or C)) #The boolean result is cast to an integer value.
+            
+            print(f"{A:^10} | {B:^10} | {C:^10} | {result:^10}") 
+
+########################################## Second Stage Finish #############################################
