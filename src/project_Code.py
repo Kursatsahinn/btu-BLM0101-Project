@@ -1,33 +1,33 @@
 ########################################## First Stage Start #############################################
 
-#First Stage: We take two boolean input value from user for using on logic gates
+#First Stage: Get two binary inputs from the user for logic gate operations
 
-#We should say what he/she should do to user
+#Prompt the user for input
 print("Input 1 or 0 for logic gates")
 
-#Use infinite while loop until user enter the right inputs
+#Use an infinite loop until valid inputs are provided
 while True:
-    #Taking user inputs as integer
+    #Get user inputs as integer
     first_input = int(input("First input: "))
     second_input = int(input("Second input: "))
     
-    #Break while loop if user enter the right inputs
+    #Break the loop if both inputs are either 0 or 1
     if ((first_input == 1 or first_input == 0) and (second_input == 1 or second_input == 0)):
         break
     
-    #Print some warning message for wrong inputs
+    #Display a warning message for invalid inputs
     else:
-        print("You have to enter 1 or 0!")
+        print("Invalid input. You must enter 1 or 0!")
 
 #Logic gates information
 print("1-AND Gate 2-OR Gate 3-XOR Gate 4-NAND Gate 5-NOT Gate")
 
-#Taking input from user for what gate he/she want to work on
-gate_information = int(input("What gate you want to work on: "))
+#Get user's choice of logic gate
+gate_information = int(input("What gate you want to work on (1-5): "))
 
 #We use 4 nearly same print section. So we use simple function
-def result(input_result):
-    print(f"Result on selected gate: {input_result}")
+def result(output_result):
+    print(f"Result on selected gate: {output_result}")
 
 
 #We should have third variable for result. That we call 'input_result'
@@ -37,40 +37,40 @@ def result(input_result):
 
 match gate_information:
     case 1:
-        input_result = first_input and second_input
-        result(input_result)
+        output_result = first_input and second_input
+        result(output_result)
     case 2:
-        input_result = first_input or second_input
-        result(input_result)
+        output_result = first_input or second_input
+        result(output_result)
     case 3:
-        input_result = int(first_input != second_input) #The boolean result is cast to an integer value.
-        result(input_result)
+        output_result = int(first_input != second_input) #The boolean result is cast to an integer value.
+        result(output_result)
     case 4:
-        input_result = int(not (first_input and second_input)) #The boolean result is cast to an integer value.
-        result(input_result)
+        output_result = int(not (first_input and second_input)) #The boolean result is cast to an integer value.
+        result(output_result)
     case 5: 
-        input_result = int(not(first_input)) #The boolean result is cast to an integer value.
-        print(f"Your first input {first_input} will be {input_result} on NOT gate.") 
+        output_result = int(not(first_input)) #The boolean result is cast to an integer value.
+        print(f"Your first input {first_input} will be {output_result} on NOT gate.") 
         
-        input_result2 = int(not(second_input)) #The boolean result is cast to an integer value.
-        print(f"Your second input  {second_input} will be {input_result2} on NOT gate")
+        output_result2 = int(not(second_input)) #The boolean result is cast to an integer value.
+        print(f"Your second input  {second_input} will be {output_result2} on NOT gate")
     case _:
-        print("Undesired Choice!")
+        print("Invalid gate selection!")
 
 ########################################## First Stage Finish #############################################
 
 ########################################## Second Stage Start #############################################
 
 print(f"{'Value A':^10} | {'Value B':^10} | {'Value C':^10} | {'A and (B or C)':^10}") 
-print("-" * 50) 
+print("-" * 55) 
 
 #Creating nested for loop for A, B and C values
 for A in range(0, 2):
     for B in range(0, 2):
         for C in range(0, 2):
             #Logic gate example
-            result = int(A and (B or C)) #The boolean result is cast to an integer value.
+            logic_result = int(A and (B or C)) #The boolean result is cast to an integer value.
             
-            print(f"{A:^10} | {B:^10} | {C:^10} | {result:^10}") 
+            print(f"{A:^10} | {B:^10} | {C:^10} | {logic_result:^15}") 
 
 ########################################## Second Stage Finish #############################################
