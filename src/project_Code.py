@@ -30,7 +30,7 @@ def result(output_result):
     print(f"Result on selected gate: {output_result}")
 
 
-#We should have third variable for result. That we call 'input_result'
+#We should have third variable for result. That we call 'output_result'
 
 #We create match-case statement using gate_information
 
