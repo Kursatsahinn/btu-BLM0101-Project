@@ -7,7 +7,7 @@ print("Insert binary values for logic gates (1 or 0)!")
 
 #Use an infinite loop until valid inputs are provided
 while True:
-    #Get user inputs as integer
+    #Cast to user's inputs an integer value
     first_input = int(input("First binary value: "))
     second_input = int(input("Second binary value: "))
     
