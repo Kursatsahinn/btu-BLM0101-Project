@@ -3,13 +3,13 @@
 #First Stage: Get two binary inputs from the user for logic gate operations
 
 #Prompt the user for input
-print("Insert boolean values for logic gates (1 or 0)!")
+print("Insert binary values for logic gates (1 or 0)!")
 
 #Use an infinite loop until valid inputs are provided
 while True:
     #Get user inputs as integer
-    first_input = int(input("First boolean value: "))
-    second_input = int(input("Second boolean value: "))
+    first_input = int(input("First binary value: "))
+    second_input = int(input("Second binary value: "))
     
     #Break the loop if both inputs are either 0 or 1
     if ((first_input == 1 or first_input == 0) and (second_input == 1 or second_input == 0)):
