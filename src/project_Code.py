@@ -56,12 +56,12 @@ match gate_information:
         print(f"Your second input  {second_input} will be {output_result2} on NOT gate")
     case _:
         print("Invalid gate selection!")
-printf("\n")
+print("\n")
 ########################################## First Stage Finish #############################################
 
 ########################################## Second Stage Start #############################################
 
-printf("--Second Stage--")
+print("--Second Stage--")
 print(f"{'Value A':^10} | {'Value B':^10} | {'Value C':^10} | {'A and (B or C)':^10}") 
 print("-" * 55) 
 
