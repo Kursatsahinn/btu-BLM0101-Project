@@ -27,7 +27,7 @@ gate_information = int(input("What gate you want to work on (1-5): "))
 
 #We use 4 same print section. So we use simple function
 def result(output_result):
-    print(f"Result on selected gate: {output_result}")
+    print(f"Result on selected gate: {output_result}.")
 
 
 #We should have third variable for result. That we call 'output_result'
