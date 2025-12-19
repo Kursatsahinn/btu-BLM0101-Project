@@ -3,7 +3,7 @@ Study of computer architecture and basic logic gates.
 
 Student Information: Kürşat Şahin 25360859432
 
-Project Topic: Data Manipulation and Logic Gates
+Project Topic: Computer Architecture and Logic Gates
 
 Youtube Link: 
 
