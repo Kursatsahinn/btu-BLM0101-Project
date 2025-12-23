@@ -61,7 +61,8 @@ print("\n")
 
 ########################################## Second Stage Start #############################################
 
-print("--Second Stage--")
+print(f"{'--A and (B or C) Truth Table--':^50}")
+print("\n")
 print(f"{'Value A':^10} | {'Value B':^10} | {'Value C':^10} | {'A and (B or C)':^10}") 
 print("-" * 55) 
 
