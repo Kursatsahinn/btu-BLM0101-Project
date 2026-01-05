@@ -1,7 +1,7 @@
 # btu-BLM0101-Project
 Study of computer architecture and basic logic gates.
 
-# Student Information: 
+# Student Information 
   * **Name:** Kürşat
   * **Surname:** Şahin
   * **School Number:** 25360859432
