@@ -1,4 +1,4 @@
-# btu-BLM0101-Project
+# btu-BLM0101-Kursat-Sahin
 Study of computer architecture and basic logic gates.
 
 # Student Information 
